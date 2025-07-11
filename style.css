@@ -305,16 +305,6 @@ body {
   }
 }
 
-/* Супутник */
-.satellite {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 100px;
-  height: 100px;
-  background: url('супутник.png') no-repeat center/contain; /* Replace with your image */
-  z-index: 5;
-}
 
 /* Зірочка по центру */
 .star-background {
@@ -326,4 +316,21 @@ body {
   background: url('зірочки.png') no-repeat center/cover; /* Замініть 'star.png' на шлях до вашого зображення */
   transform: translate(-50%, -50%);
   z-index: 1; /* Щоб зірочка була позаду всіх елементів */
+}
+/* Ракета на фоні */
+.rocket {
+  position: fixed;
+  bottom: 200px; /* Відступ від нижнього краю */
+  left: 700px; /* Відступ від лівого краю */
+  width: 120px; /* Ширина ракети */
+  height: 240px; /* Висота ракети */
+  background: url('ракета.png') no-repeat center/contain; /* Замініть 'rocket.png' на шлях до вашого зображення */
+  z-index: 3; /* Щоб ракета була над фоном, але під іншими елементами */
+  animation: rocketFloat 3s ease-in-out infinite; /* Анімація плавного руху */
+}
+
+/* Анімація для ракети */
+@keyframes rocketFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
