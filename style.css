@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: radial-gradient(circle at 50% 50%, #000014, #000010, #000008, #000004, #000000);
+  background: radial-gradient(circle at 50% 50%, #030331, #2d055a, #2d0b49, #4d1a6a, #3d0a47);
   color: #fff;
 }
 
@@ -29,10 +29,12 @@ body {
   100% { transform: translateY(-100px); }
 }
 
+
 /* Комети */
 .comets {
   position: absolute;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
@@ -40,35 +42,63 @@ body {
   z-index: 1;
 }
 
+/* Перша комета */
 .comets::before {
   content: '';
   position: absolute;
   top: -10%;
-  left: -10%;
-  width: 4px;
+  left: 10%; /* Відступ від лівого краю */
+  width: 6px;
   height: 80px;
   background: linear-gradient(white, transparent);
-  transform: rotate(45deg);
-  animation: cometFly 8s linear infinite;
+  transform: rotate(200deg); /* Кут нахилу */
+  animation: cometFly1 10s linear infinite;
 }
 
-@keyframes cometFly {
+/* Друга комета */
+.comets::after {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: 40%; /* Відступ від лівого краю */
+  width: 4px;
+  height: 60px;
+  background: linear-gradient(white, transparent);
+  transform: rotate(200deg); /* Кут нахилу */
+  animation: cometFly2 12s linear infinite;
+}
+
+/* Третя комета */
+.comets-extra {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: 70%; /* Відступ від лівого краю */
+  width: 5px;
+  height: 100px;
+  background: linear-gradient(white, transparent);
+  transform: rotate(200deg); /* Кут нахилу */
+  animation: cometFly3 15s linear infinite;
+}
+
+/* Анімація для першої комети */
+@keyframes cometFly1 {
   0% { transform: translate(0, 0) rotate(45deg); opacity: 1; }
-  100% { transform: translate(200vw, 200vh) rotate(45deg); opacity: 0; }
+  100% { transform: translate(200vw, 200vh) rotate(200deg); opacity: 0; }
 }
 
-/* Сонячна система на фоні */
-.solar-system {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: radial-gradient(circle at 50% 50%, #000014, #000010, #000008, #000004, #000000);
-  overflow: hidden;
-  z-index: 0;
-  pointer-events: none;
+/* Анімація для другої комети */
+@keyframes cometFly2 {
+  0% { transform: translate(0, 0) rotate(60deg); opacity: 1; }
+  100% { transform: translate(200vw, 200vh) rotate(200deg); opacity: 0; }
 }
+
+/* Анімація для третьої комети */
+@keyframes cometFly3 {
+  0% { transform: translate(0, 0) rotate(30deg); opacity: 1; }
+  100% { transform: translate(200vw, 200vh) rotate(200deg); opacity: 0; }
+}
+
 
 .solar-system::before {
   content: '';
@@ -114,20 +144,6 @@ body {
 @keyframes planetGlow {
   0% { filter: drop-shadow(0 0 20px #fff8) drop-shadow(0 0 40px #fff4);}
   100% { filter: drop-shadow(0 0 40px #ffe) drop-shadow(0 0 80px #ffd);}
-}
-
-/* Планета */
-.planet {
-  position: absolute;
-  bottom: 30px;
-  right: 30px;
-  width: 120px;
-  height: 120px;
-  background: radial-gradient(circle at 30% 30%, #ffe9a7, #c144ff);
-  border-radius: 50%;
-  box-shadow: 0 0 30px rgba(255,255,255,0.3);
-  animation: rotatePlanet 20s linear infinite;
-  z-index: 2;
 }
 
 @keyframes rotatePlanet {
@@ -333,4 +349,22 @@ body {
 @keyframes rocketFloat {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
+}
+/* Сузір'я */
+.constellation {
+  position: fixed;
+  top: -10%; /* Відступ від верхнього краю */
+  left: 6%; /* Відступ від лівого краю */
+  width: 250px; /* Ширина зображення */
+  height: 350px; /* Висота зображення */
+  background: url('сузіря-removebg-preview.png') no-repeat center/contain; /* Замініть 'сузіря.png' на шлях до вашого зображення */
+  z-index: 2; /* Щоб сузір'я було над фоном, але під іншими елементами */
+  opacity: 0.9; /* Напівпрозорість */
+  animation: constellationTwinkle 4s infinite alternate; /* Анімація мерехтіння */
+}
+
+/* Анімація для сузір'я */
+@keyframes constellationTwinkle {
+  0% { opacity: 0.7; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1.1); }
 }
