@@ -35,6 +35,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+document.querySelectorAll('.planet-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    const planet = button.dataset.planet;
+    document.querySelectorAll('.bio-section').forEach(section => {
+      if (section.dataset.planet === planet) {
+        section.classList.toggle('expanded');
+      } else {
+        section.classList.remove('expanded');
+      }
+    });
+  });
+});
+
 // --- Анімація зірок ---
 const canvas = document.createElement('canvas');
 canvas.width = window.innerWidth;
