@@ -118,3 +118,28 @@ document.addEventListener('DOMContentLoaded', () => {
     isUkrainian = !isUkrainian;
   });
 });
+function launchMeteor() {
+  const meteor = document.createElement('div');
+  meteor.classList.add('meteor');
+  document.body.appendChild(meteor);
+
+  setTimeout(() => {
+    meteor.remove(); // прибираємо з DOM після завершення анімації
+  }, 3000);
+}
+
+// Запуск метеора щоразу при кліку
+document.addEventListener('click', launchMeteor);
+
+function launchMeteor1() {
+  const meteor1 = document.createElement('div');
+  meteor1.classList.add('meteor1');
+  document.body.appendChild(meteor1);
+
+  setTimeout(() => {
+    meteor1.remove(); // прибираємо з DOM після завершення анімації
+  }, 3000);
+}
+
+// Запуск метеора щоразу при кліку
+document.addEventListener('click', launchMeteor1);

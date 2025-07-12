@@ -451,7 +451,7 @@ body {
 .neptune {
  position: fixed;
  bottom: 360px; /* Відступ від нижнього краю */
- right: 430px; /* Відступ від правого краю */
+ right: 440px; /* Відступ від правого краю */
  width: 100px; /* Ширина галактики */
  height: 100px; /* Висота галактики */
  background: url('нептун.png') no-repeat center/contain; /* Замініть 'neptune.png' на шлях до вашого зображення */
@@ -465,13 +465,13 @@ body {
   50% { transform: translateY(-10px); }
 }
 
-/*марс на фоні */
-mars {
+/*марс на фоні*/
+.mars {
  position: fixed;
- bottom: 260px; /* Відступ від нижнього краю */
+ bottom: 370px; /* Відступ від нижнього краю */
  right: 630px; /* Відступ від правого краю */
- width: 300px; /* Ширина галактики */
- height: 310px; /* Висота галактики */
+ width: 110px; /* Ширина галактики */
+ height: 105px; /* Висота галактики */
  background: url('марс.png') no-repeat center/contain; /* Замініть 'mars.png' на шлях до вашого зображення */
  z-index: 3; /* Щоб галактика була над фоном, але під іншими елементами */
  animation: marsFloat 7s ease-in-out infinite; /* Анімація плавного руху */
@@ -481,4 +481,50 @@ mars {
 @keyframes marsFloat {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
+}
+.meteor {
+  position: fixed;
+  top: 140px; /* висота, з якої стартує */
+  left: 340px; /* починає за межами екрана */
+  width: 100px;
+  height: 30px;
+  background: url('метеорит.png') no-repeat center/contain;
+  animation: meteorFly 12s ease-out forwards;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes meteorFly {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw); /* летить далеко праворуч */
+    opacity: 5; /* поступово зникає */
+    transform: translateX(800px); /* Стільки px праворуч */
+  }
+}
+.meteor1 {
+  position: fixed;
+  top: 120px; /* висота, з якої стартує */
+  left: 40px; /* починає за межами екрана */
+  width: 100px;
+  height: 30px;
+  background: url('метеорит.png') no-repeat center/contain;
+  animation: meteor1Fly 12s ease-out forwards;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes meteor1Fly {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw); /* летить далеко праворуч */
+    opacity: 5; /* поступово зникає */
+    transform: translateX(800px); /* Стільки px праворуч */
+  }
 }
