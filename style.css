@@ -357,7 +357,7 @@ body {
   left: 6%; /* Відступ від лівого краю */
   width: 250px; /* Ширина зображення */
   height: 350px; /* Висота зображення */
-  background: url('сузіря-removebg-preview.png') no-repeat center/contain; /* Замініть 'сузіря.png' на шлях до вашого зображення */
+  background: url('сузіря.png') no-repeat center/contain; /* Замініть 'сузіря.png' на шлях до вашого зображення */
   z-index: 2; /* Щоб сузір'я було над фоном, але під іншими елементами */
   opacity: 0.9; /* Напівпрозорість */
   animation: constellationTwinkle 4s infinite alternate; /* Анімація мерехтіння */
@@ -367,4 +367,39 @@ body {
 @keyframes constellationTwinkle {
   0% { opacity: 0.7; transform: scale(1); }
   100% { opacity: 1; transform: scale(1.1); }
+}
+/* Галактика на фоні */
+.galaxy {
+ position: fixed;
+ bottom: -70px; /* Відступ від нижнього краю */
+ left: 900px; /* Відступ від лівого краю */
+ width: 420px; /* Ширина галактики */
+ height: 440px; /* Висота галактики */
+ background: url('галактика.png') no-repeat center/contain; /* Замініть 'galaxy.png' на шлях до вашого зображення */
+ z-index: 3; /* Щоб галактика була над фоном, але під іншими елементами */
+ animation: galaxyFloat 2s ease-in-out infinite; /* Анімація плавного руху */
+}
+
+/* Анімація для галактики*/
+@keyframes galaxyFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* сатурн на фоні */
+.saturn {
+ position: fixed;
+ bottom: 190px; /* Відступ від нижнього краю */
+ left: 300px; /* Відступ від лівого краю */
+ width: 120px; /* Ширина галактики */
+ height: 130px; /* Висота галактики */
+ background: url('сатурн.png') no-repeat center/contain; /* Замініть 'saturn.png' на шлях до вашого зображення */
+ z-index: 3; /* Щоб галактика була над фоном, але під іншими елементами */
+ animation: saturnFloat 5s ease-in-out infinite; /* Анімація плавного руху */
+}
+
+/* Анімація для сатурна*/
+@keyframes saturnFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
