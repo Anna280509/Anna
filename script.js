@@ -101,3 +101,20 @@ function animate() {
   requestAnimationFrame(animate);
 }
 animate();
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleLangBtn = document.getElementById('toggle-lang');
+  if (!toggleLangBtn) return;
+
+  let isUkrainian = true;
+
+  toggleLangBtn.addEventListener('click', () => {
+    const uaTexts = document.querySelectorAll('.lang-ua');
+    const enTexts = document.querySelectorAll('.lang-en');
+
+    uaTexts.forEach(el => el.classList.toggle('hidden'));
+    enTexts.forEach(el => el.classList.toggle('hidden'));
+
+    toggleLangBtn.textContent = isUkrainian ? '🔁 Translate' : '🔁 Переклад';
+    isUkrainian = !isUkrainian;
+  });
+});
