@@ -1,6 +1,8 @@
 /* Загальний стиль */
 body {
   margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Забороняє прокрутку вправо */
   font-family: 'Poppins', sans-serif;
   background: radial-gradient(circle at 50% 50%, #030331, #2d055a, #2d0b49, #4d1a6a, #3d0a47);
   color: #fff;
@@ -27,6 +29,29 @@ body {
 @keyframes moveStars {
   0% { transform: translateY(0); }
   100% { transform: translateY(-100px); }
+}
+
+.top-menu {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  z-index: 1000;
+  display: flex;
+  gap: 15px;
+}
+
+.menu-link {
+  text-decoration: none;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.menu-link:hover {
+  background-color: rgba(255, 255, 255, 0.25);
 }
 
 
@@ -196,6 +221,48 @@ body {
   margin: 0;
   padding: 10px 0;
   font-size: 1.4rem;
+}
+
+/* future */
+.future-text {
+  max-width: none;
+  width: 90vw; 
+  margin: 50px auto;
+  background-color: rgba(255, 255, 255, 0.07);
+  padding: 25px 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+  font-size: 12px;
+  line-height: 1.6;
+  color: #fff;
+/* 🔲 ОБВОДКА ЧОРНА І ГРУБША */
+  text-shadow:
+     1px 1px 0 #000,
+       -1px 1px 0 #000,
+        1px -1px 0 #000,
+       -1px -1px 0 #000;
+}
+.future-text h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+.future-text p {
+  margin-bottom: 20px;
+  text-align: justify;
+}
+.future-text {
+  column-count: 2;
+  column-gap: 40px;
+}
+.highlight {
+  color: #bf52ff;          /* Золотистий колір */
+  font-weight: 700;        /* Жирний */
+  background-color: rgba(148, 35, 168, 0.568);  /* Легке жовте тло */
+  padding: 2px 6px;
+  border-radius: 5px;
 }
 
 /* Кнопки-планети */
