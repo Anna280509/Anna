@@ -34,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
     showSection(planetBtns[0].getAttribute('data-planet'));
   }
 });
-
 document.querySelectorAll('.planet-btn').forEach(button => {
   button.addEventListener('click', () => {
     const planet = button.dataset.planet;
@@ -47,7 +46,6 @@ document.querySelectorAll('.planet-btn').forEach(button => {
     });
   });
 });
-
 // --- Анімація зірок ---
 const canvas = document.createElement('canvas');
 canvas.width = window.innerWidth;
@@ -127,9 +125,10 @@ function launchMeteor() {
     meteor.remove(); // прибираємо з DOM після завершення анімації
   }, 3000);
 }
-
-// Запуск метеора щоразу при кліку
-document.addEventListener('click', launchMeteor);
+document.addEventListener('click', () => {
+  launchMeteor();
+  launchMeteor1();
+});
 
 function launchMeteor1() {
   const meteor1 = document.createElement('div');
@@ -140,6 +139,40 @@ function launchMeteor1() {
     meteor1.remove(); // прибираємо з DOM після завершення анімації
   }, 3000);
 }
+const birthDate = new Date(2009, 4, 28, 5, 5, 0); // Вкажи свою дату народження
 
-// Запуск метеора щоразу при кліку
-document.addEventListener('click', launchMeteor1);
+function updateTimer() {
+  const now = new Date();
+  let diff = now - birthDate;
+
+  if (diff < 0) {
+    document.getElementById('timer').textContent = "Ще не народилася!";
+    return;
+  }
+
+  const msInSecond = 1000;
+  const msInMinute = msInSecond * 60;
+  const msInHour = msInMinute * 60;
+  const msInDay = msInHour * 24;
+  const msInYear = msInDay * 365.25;
+
+  const years = Math.floor(diff / msInYear);
+  diff -= years * msInYear;
+
+  const days = Math.floor(diff / msInDay);
+  diff -= days * msInDay;
+
+  const hours = Math.floor(diff / msInHour);
+  diff -= hours * msInHour;
+
+  const minutes = Math.floor(diff / msInMinute);
+  diff -= minutes * msInMinute;
+
+  const seconds = Math.floor(diff / msInSecond);
+
+  document.getElementById('timer').textContent =
+    `${years} років, ${days} днів, ${hours} годин, ${minutes} хвилин, ${seconds} секунд`;
+}
+
+setInterval(updateTimer, 1000);
+updateTimer();
