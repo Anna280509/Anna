@@ -165,7 +165,7 @@ body {
   padding: 40px;
   background: rgba(0, 0, 20, 0.7);
   border-radius: 15px;
-  text-align: left; /* вирівнювання по лівому краю */
+  text-align: center; /* вирівнювання по лівому краю */
   animation: fadeIn 2s ease-in-out;
 }
 
