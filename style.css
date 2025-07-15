@@ -160,12 +160,12 @@ body {
 .bio {
   position: relative;
   z-index: 3;
-  width: 400px;
-  height: 400px;
-  min-width: 180px;
-  min-height: 180px;
-  max-width: 90vw;
-  max-height: 90vw;
+  width: 650px;
+  height: 650px;
+  min-width: 260px;
+  min-height: 260px;
+  max-width: 99vw;
+  max-height: 99vw;
   margin: 80px auto 40px auto;
   padding: 36px 28px;
   background: radial-gradient(circle at 50% 50%, #ffe066 60%, #ffb700 90%, #ffecb3 100%);
@@ -186,59 +186,30 @@ body {
   word-break: break-word;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .bio {
-    width: 90vw;
-    height: 90vw;
-    min-width: 120px;
-    min-height: 120px;
+    width: 94vw;
+    height: 94vw;
+    min-width: 140px;
+    min-height: 140px;
     padding: 7vw 4vw;
     font-size: 0.95rem;
     border-radius: 50%;
     margin-top: 80px;
     margin-bottom: 24px;
   }
-  .bio h2 {
-    font-size: 1.1rem;
-  }
-  .bio p {
-    font-size: 0.95rem;
-  }
-  .main-content {
-    top: 80px;
+  .burger {
+    top: 10px;
+    left: 10px;
   }
 }
 
-/* Таймер-галактика */
-#timer {
-  display: inline-block;
-  font-size: 1.2rem;
-  max-width: 220px;
-  padding: 15px 22px;
-  color: #fff;
-  background: radial-gradient(circle at 30% 30%, #a7c7ff 60%, #3a1c71 100%);
-  border-radius: 50px;
-  box-shadow:
-    0 0 18px 6px #a7c7ff88,
-    0 0 32px 12px #fff6,
-    0 0 0 4px #fff inset;
-  border: 2px solid #fff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  position: fixed;
-  top: 16px;
-  right: 32px;
-  z-index: 2000;
-  text-align: center;
-  letter-spacing: 0.5px;
-  transition: box-shadow 0.3s;
-}
-
-/* Стандартний бургер */
+/* Бургер завжди зверху зліва і завжди видимий */
 .burger {
   display: flex !important;
   position: fixed;
-  top: 18px;
-  left: 18px;
+  top: 10px;
+  left: 10px;
   width: 48px;
   height: 48px;
   z-index: 3000;
@@ -269,7 +240,7 @@ body {
   transform: rotate(-45deg) translateY(-10px);
 }
 
-/* Бургер-меню завжди видно і у вигляді ракети */
+/* Бургер-меню */
 .burger-menu {
   display: none;
   position: fixed;
@@ -909,6 +880,35 @@ box-shadow:
     0 0 32px 12px #fff6,
     0 0 0 4px #fff inset;
   border: 2px solid #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: fixed;
+  top: 16px;
+  right: 32px;
+  z-index: 2000;
+  text-align: center;
+  letter-spacing: 0.5px;
+  transition: box-shadow 0.3s;
+}
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: fixed;
+  top: 16px;
+  right: 32px;
+  z-index: 2000;
+  text-align: center;
+  letter-spacing: 0.5px;
+  transition: box-shadow 0.3s;
+}
+    0 0 0 4px #fff inset;
+  border: 2px solid #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: fixed;
+  top: 16px;
+  right: 32px;
+  z-index: 2000;
+  text-align: center;
+  letter-spacing: 0.5px;
+  transition: box-shadow 0.3s;
+}
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   position: fixed;
   top: 16px;
