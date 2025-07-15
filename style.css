@@ -32,28 +32,8 @@ body {
 }
 
 .top-menu {
-  position: absolute;
-  top: 10px;
-  left: 20px;
-  z-index: 1000;
-  display: flex;
-  gap: 15px;
+  display: none !important; /* Полностью скрыть старое меню */
 }
-
-.menu-link {
-  text-decoration: none;
-  color: #fff;
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 8px 14px;
-  border-radius: 10px;
-  font-weight: bold;
-  transition: 0.3s ease;
-}
-
-.menu-link:hover {
-  background-color: rgba(255, 255, 255, 0.25);
-}
-
 
 /* Комети */
 .comets {
@@ -208,26 +188,25 @@ body {
 .burger {
   display: flex !important;
   position: fixed;
-  top: 10px;
-  left: 10px;
-  width: 48px;
-  height: 48px;
+  top: 18px;
+  left: 18px;
+  width: 40px;
+  height: 40px;
   z-index: 3000;
   background: none;
   border: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 7px;
+  gap: 6px;
   cursor: pointer;
-  padding: 0;
 }
 .burger span {
   display: block;
-  width: 32px;
-  height: 5px;
-  background: linear-gradient(90deg, #fff 60%, #a7c7ff 100%);
-  border-radius: 3px;
+  width: 30px;
+  height: 4px;
+  background: #fff;
+  border-radius: 2px;
   transition: 0.3s;
 }
 .burger.active span:nth-child(1) {
@@ -244,7 +223,8 @@ body {
 .burger-menu {
   display: none;
   position: fixed;
-  top: 0; left: 0;
+  top: 0; 
+  left: 0;
   width: 100vw;
   height: 100vh;
   background: rgba(30, 0, 60, 0.97);
@@ -253,6 +233,7 @@ body {
   align-items: center;
   z-index: 2999;
 }
+
 .burger-menu .menu-link,
 .burger-menu .burger-lang-btn {
   font-size: 2rem;
@@ -264,8 +245,9 @@ body {
   cursor: pointer;
   display: block;
 }
+
 .burger-menu.active {
-  display: flex;
+  display: flex !important;
 }
 
 .bio h2 {
@@ -488,62 +470,32 @@ box-shadow:
   .main-content .bio {
     padding: 24px;
   }
+  .burger {
+    display: flex !important; /* Обеспечить видимость на мобильных */
+  }
 }
 
-/* Бургер-меню */
-.burger {
-  display: none;
-  position: fixed;
-  top: 18px;
-  left: 18px;
-  width: 40px;
-  height: 40px;
-  z-index: 3000;
-  background: none;
-  border: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
-  cursor: pointer;
-}
-.burger span {
-  display: block;
-  width: 30px;
-  height: 4px;
-  background: #fff;
-  border-radius: 2px;
-  transition: 0.3s;
-}
-.burger-menu {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(30, 0, 60, 0.97);
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 2999;
-}
-.burger-menu .menu-link {
-  font-size: 2rem;
-  margin: 20px 0;
-  color: #fff;
-  text-decoration: none;
-}
-.burger-menu.active {
-  display: flex;
-}
-.burger.active span:nth-child(1) {
-  transform: rotate(45deg) translateY(10px);
-}
-.burger.active span:nth-child(2) {
-  opacity: 0;
-}
-.burger.active span:nth-child(3) {
-  transform: rotate(-45deg) translateY(-10px);
+/* Адаптивність */
+@media (max-width: 900px) {
+  .top-menu {
+    display: none;
+  }
+  .burger {
+    display: flex;
+  }
+  .planet-buttons {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .main-content {
+    margin: 20px 0 0 0;
+    padding: 0 5vw;
+    max-width: 100vw;
+  }
+  .bio {
+    padding: 16px;
+    font-size: 1rem;
+  }
 }
 
 /* Планети-кнопки з картинками */
@@ -574,37 +526,6 @@ box-shadow:
 .constellation { background-image: url('img/constellation.png'); }
 .rocket-with-glow { background-image: url('img/rocket.png'); }
 .satellite { background-image: url('img/satellite.png'); }
-
-/* Адаптивність */
-@media (max-width: 900px) {
-  .top-menu {
-    display: none;
-  }
-  .burger {
-    display: flex;
-  }
-  .planet-buttons {
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  .main-content {
-    margin: 20px 0 0 0;
-    padding: 0 5vw;
-    max-width: 100vw;
-  }
-  .bio {
-    padding: 16px;
-    font-size: 1rem;
-  }
-}
-@media (min-width: 901px) {
-  .burger, .burger-menu {
-    display: none !important;
-  }
-  .top-menu {
-    display: flex;
-  }
-}
 
 /* Зірочка по центру */
 .star-background {
@@ -889,15 +810,13 @@ box-shadow:
   letter-spacing: 0.5px;
   transition: box-shadow 0.3s;
 }
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  position: fixed;
-  top: 16px;
-  right: 32px;
-  z-index: 2000;
-  text-align: center;
-  letter-spacing: 0.5px;
-  transition: box-shadow 0.3s;
-}
+  padding: 15px 22px;
+  color: #fff;
+  background: radial-gradient(circle at 30% 30%, #a7c7ff 60%, #3a1c71 100%);
+  border-radius: 50px;
+  box-shadow:
+    0 0 18px 6px #a7c7ff88,
+    0 0 32px 12px #fff6,
     0 0 0 4px #fff inset;
   border: 2px solid #fff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -917,7 +836,67 @@ box-shadow:
   text-align: center;
   letter-spacing: 0.5px;
   transition: box-shadow 0.3s;
+  100% {
+    transform: translateX(100vw); /* летить далеко праворуч */
+    opacity: 5; /* поступово зникає */
+    transform: translateX(800px); /* Стільки px праворуч */
+  }
 }
+.meteor1 {
+  position: fixed;
+  top: 120px; /* висота, з якої стартує */
+  left: 40px; /* починає за межами екрана */
+  width: 100px;
+  height: 30px;
+  background: url('метеорит.png') no-repeat center/contain;
+  animation: meteor1Fly 12s ease-out forwards;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes meteor1Fly {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw); /* летить далеко праворуч */
+    opacity: 5; /* поступово зникає */
+    transform: translateX(800px); /* Стільки px праворуч */
+  }
+}
+/* Стиль самого таймера */
+#timer {
+  display: inline-block;
+  font-size: 1.2rem;
+  max-width: 220px;
+  padding: 15px 22px;
+  color: #fff;
+  background: radial-gradient(circle at 30% 30%, #a7c7ff 60%, #3a1c71 100%);
+  border-radius: 50px;
+  box-shadow:
+    0 0 18px 6px #a7c7ff88,
+    0 0 32px 12px #fff6,
+    0 0 0 4px #fff inset;
+  border: 2px solid #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: fixed;
+  top: 16px;
+  right: 32px;
+  z-index: 2000;
+  text-align: center;
+  letter-spacing: 0.5px;
+  transition: box-shadow 0.3s;
+}
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: fixed;
+  top: 16px;
+  right: 32px;
+  z-index: 2000;
+  text-align: center;
+  letter-spacing: 0.5px;
+  transition: box-shadow 0.3s;
+
 
 
 
