@@ -652,7 +652,11 @@ box-shadow:
   border-radius: 70px;
   box-shadow: 0 0 15px #debcf2aa;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  position: relative;
-  z-index: 0;
+  position: fixed;
+  top: 16px;
+  right: 32px;
+  z-index: 2000;
 }
+
+
 
