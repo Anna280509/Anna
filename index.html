@@ -4,112 +4,112 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Автобіографія Ані</title>
-  <!-- Підключення стилів -->
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="style.css" />
-  <div id="timer">Завантаження таймера...</div>
 </head>
 <body>
-  <div class="top-menu">
-  <a href="index.html" class="menu-link">Головна</a>
-  <a href="future.html" class="menu-link">Моє майбутнє</a>
-  <a href="achievements.html" class="menu-link">Що я вже вивчила</a>
-</div>
- <!--Фонові зірки та планети -->
+  <div id="timer">Завантаження таймера...</div>
+  <nav class="top-menu">
+    <a href="index.html" class="menu-link">Головна</a>
+    <a href="future.html" class="menu-link">Моє майбутнє</a>
+    <a href="achievements.html" class="menu-link">Що я вже вивчила</a>
+  </nav>
+  <button class="burger" id="burger-btn" aria-label="Меню">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="burger-menu" id="burger-menu">
+    <a href="index.html" class="menu-link">Головна</a>
+    <a href="future.html" class="menu-link">Моє майбутнє</a>
+    <a href="achievements.html" class="menu-link">Що я вже вивчила</a>
+  </div>
+  <!--Фонові зірки та планети -->
   <div class="star-background"></div>
   <div class="comets"></div>
-  <div class="mars"></div>
-  <div class="neptune"></div>
-  <div class="sun"></div>
+  <div class="mars planet-img"></div>
+  <div class="neptune planet-img"></div>
+  <div class="sun planet-img"></div>
   <div class="meteor"></div>
   <div class="meteor1"></div>
-  <div class="moon"></div>
+  <div class="moon planet-img"></div>
   <div class="galaxy"></div>
-  <div class="saturn"></div>
+  <div class="saturn planet-img"></div>
   <div class="comets-extra"></div>
   <div class="constellation"></div>
- <div class="orbit-container">
-  <div class="rocket-with-glow">
-    <div class="rocket-glow"></div> <!-- Світіння -->
+  <div class="orbit-container">
+    <div class="rocket-with-glow"></div>
   </div>
-</div>
   <div class="stars"></div>
   <div class="comets"></div>
+  <div class="main-content">
+    <button id="toggle-lang" class="lang-toggle">🔁 Переклад</button>
+    <section class="bio fade-in">
+      <h2>
+        <span class="lang-ua">👋 Привіт! Я — Аня</span>
+        <span class="lang-en hidden">👋 Hello! I’m Anya</span>
+      </h2>
 
- <!-- Основний flex-контейнер для кнопок і біо -->
-<div class="main-content">
-  <!-- 🔁 КНОПКА ДЛЯ ПЕРЕКЛАДУ -->
-  <button id="toggle-lang" class="lang-toggle">🔁 Переклад</button>
+      <div class="bio-section collapsed" data-planet="mercury">
+        <p class="lang-ua">🌟 Я весела, оптимістична та працьовита особистість, яка завжди прагне розвиватися і знаходити нові ідеї.</p>
+        <p class="lang-en hidden">🌟 I am a cheerful, optimistic, and hardworking person who always strives to grow and find new ideas.</p>
+      </div>
 
-  <!-- Основний контейнер біографії -->
-  <section class="bio fade-in">
-    <h2>
-  <span class="lang-ua">👋 Привіт! Я — Аня</span>
-  <span class="lang-en hidden">👋 Hello! I’m Anya</span>
-</h2>
+      <div class="bio-section collapsed" data-planet="venus">
+        <p class="lang-ua">🎨 Моя пристрасть — малювання і творчість. У вільний час я створюю ілюстрації та візуальні концепції, які допомагають мені поєднувати мистецтво з технологіями.</p>
+        <p class="lang-en hidden">🎨 My passion is drawing and creativity. In my free time, I create illustrations and visual concepts that help me combine art with technology.</p>
+      </div>
 
+      <div class="bio-section collapsed" data-planet="earth">
+        <p class="lang-ua">💻 Нещодавно я почала знайомитися з програмуванням і зрозуміла, що дизайн є моїм справжнім покликанням. Вивчаю HTML, CSS, JavaScript, Python, а також користуюсь GitHub, Deepseek і Grok.</p>
+        <p class="lang-en hidden">💻 I recently started learning programming and realized that design is my true calling. I study HTML, CSS, JavaScript, Python, and use GitHub, Deepseek, and Grok.</p>
+      </div>
 
-    <div class="bio-section collapsed" data-planet="mercury">
-      <p class="lang-ua">🌟 Я весела, оптимістична та працьовита особистість, яка завжди прагне розвиватися і знаходити нові ідеї.</p>
-      <p class="lang-en hidden">🌟 I am a cheerful, optimistic, and hardworking person who always strives to grow and find new ideas.</p>
-    </div>
+      <div class="bio-section collapsed" data-planet="mars">
+        <p class="lang-ua">🖥 Моя мета — розробляти сучасні, стильні інтерфейси, які будуть не просто функціональними, а й надихати користувачів. Я прагну поєднати творчість із технологіями, щоб створювати унікальні цифрові продукти.</p>
+        <p class="lang-en hidden">🖥 My goal is to develop modern, stylish interfaces that are not only functional but also inspire users. I strive to combine creativity with technology to create unique digital products.</p>
+      </div>
 
-    <div class="bio-section collapsed" data-planet="venus">
-      <p class="lang-ua">🎨 Моя пристрасть — малювання і творчість. У вільний час я створюю ілюстрації та візуальні концепції, які допомагають мені поєднувати мистецтво з технологіями.</p>
-      <p class="lang-en hidden">🎨 My passion is drawing and creativity. In my free time, I create illustrations and visual concepts that help me combine art with technology.</p>
-    </div>
+      <div class="bio-section collapsed" data-planet="jupiter">
+        <p class="lang-ua">✨ Мене надихає моє уявлення про майбутнє, і я вірю, що наполегливість і бажання творити допоможуть мені досягти будь-яких цілей.</p>
+        <p class="lang-en hidden">✨ I’m inspired by my vision of the future, and I believe that persistence and a desire to create will help me achieve anything.</p>
+      </div>
 
-    <div class="bio-section collapsed" data-planet="earth">
-      <p class="lang-ua">💻 Нещодавно я почала знайомитися з програмуванням і зрозуміла, що дизайн є моїм справжнім покликанням. Вивчаю HTML, CSS, JavaScript, Python, а також користуюсь GitHub, Deepseek і Grok.</p>
-      <p class="lang-en hidden">💻 I recently started learning programming and realized that design is my true calling. I study HTML, CSS, JavaScript, Python, and use GitHub, Deepseek, and Grok.</p>
-    </div>
+      <div class="bio-section collapsed" data-planet="saturn">
+        <p class="lang-ua">📚 Окрім програмування, я добре розумію математику і зараз активно вивчаю англійську, щоб працювати з найкращими інструментами і командами по всьому світу.</p>
+        <p class="lang-en hidden">📚 Besides programming, I understand math well and I'm actively learning English to work with the best tools and teams around the world.</p>
+      </div>
 
-    <div class="bio-section collapsed" data-planet="mars">
-      <p class="lang-ua">🖥 Моя мета — розробляти сучасні, стильні інтерфейси, які будуть не просто функціональними, а й надихати користувачів. Я прагну поєднати творчість із технологіями, щоб створювати унікальні цифрові продукти.</p>
-      <p class="lang-en hidden">🖥 My goal is to develop modern, stylish interfaces that are not only functional but also inspire users. I strive to combine creativity with technology to create unique digital products.</p>
-    </div>
-
-    <div class="bio-section collapsed" data-planet="jupiter">
-      <p class="lang-ua">✨ Мене надихає моє уявлення про майбутнє, і я вірю, що наполегливість і бажання творити допоможуть мені досягти будь-яких цілей.</p>
-      <p class="lang-en hidden">✨ I’m inspired by my vision of the future, and I believe that persistence and a desire to create will help me achieve anything.</p>
-    </div>
-
-    <div class="bio-section collapsed" data-planet="saturn">
-      <p class="lang-ua">📚 Окрім програмування, я добре розумію математику і зараз активно вивчаю англійську, щоб працювати з найкращими інструментами і командами по всьому світу.</p>
-      <p class="lang-en hidden">📚 Besides programming, I understand math well and I'm actively learning English to work with the best tools and teams around the world.</p>
-    </div>
-
-    <div class="bio-section collapsed" data-planet="neptune">
-      <p class="lang-ua">🌍 Я мрію про роботу, яка дарує свободу часу та можливість творити кожного дня, реалізуючи свої ідеї та допомагаючи іншим.</p>
-      <p class="lang-en hidden">🌍 I dream of a job that gives me freedom of time and the ability to create every day, realizing my ideas and helping others.</p>
-    </div>
-  </section>
-</div>
-
-    <!-- Головні кнопки-планети -->
+      <div class="bio-section collapsed" data-planet="neptune">
+        <p class="lang-ua">🌍 Я мрію про роботу, яка дарує свободу часу та можливість творити кожного дня, реалізуючи свої ідеї та допомагаючи іншим.</p>
+        <p class="lang-en hidden">🌍 I dream of a job that gives me freedom of time and the ability to create every day, realizing my ideas and helping others.</p>
+      </div>
+    </section>
     <div class="planet-buttons">
       <button class="planet-btn" data-planet="mercury" title="Меркурій">
-        <svg width="32" height="32"><circle cx="16" cy="16" r="12" fill="#b1b1b1"/></svg>
+        <img src="img/mercury.png" alt="Меркурій" />
       </button>
       <button class="planet-btn" data-planet="venus" title="Венера">
-        <svg width="32" height="32"><circle cx="16" cy="16" r="14" fill="#e6c27a"/></svg>
+        <img src="img/venus.png" alt="Венера" />
       </button>
       <button class="planet-btn" data-planet="earth" title="Земля">
-        <svg width="32" height="32">
-          <circle cx="16" cy="16" r="14" fill="#3a9eea"/>
-          <ellipse cx="16" cy="16" rx="8" ry="4" fill="#2ecc71" opacity="0.7"/>
-        </svg>
+        <img src="img/earth.png" alt="Земля" />
       </button>
       <button class="planet-btn" data-planet="mars" title="Марс">
-        <svg width="32" height="32"><circle cx="16" cy="16" r="13" fill="#c14444"/></svg>
+        <img src="img/mars.png" alt="Марс" />
       </button>
       <button class="planet-btn" data-planet="jupiter" title="Юпітер">
-        <svg width="32" height="32"><circle cx="16" cy="16" r="16" fill="#e3b07a"/></svg>
+        <img src="img/jupiter.png" alt="Юпітер" />
       </button>
       <button class="planet-btn" data-planet="saturn" title="Сатурн">
-        <svg width="32" height="32">
-          <ellipse cx="16" cy="16" rx="14" ry="8" fill="#e6d8a7"/>
-          <ellipse cx="16" cy="16" rx="16" ry="10" fill="#ffe066" opacity="0.5"/>
+        <img src="img/saturn.png" alt="Сатурн" />
+      </button>
+      <button class="planet-btn" data-planet="neptune" title="Нептун">
+        <img src="img/neptune.png" alt="Нептун" />
+      </button>
+    </div>
+  </div>
+  <div class="satellite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
         </svg>
       </button>
       <button class="planet-btn" data-planet="neptune" title="Нептун">
