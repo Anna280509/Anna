@@ -160,14 +160,15 @@ body {
 .bio {
   position: relative;
   z-index: 3;
-  width: 420px;
-  min-width: 220px;
-  min-height: 220px;
-  max-width: 95vw;
-  max-height: 95vw;
-  margin: 60px auto 60px auto;
-  padding: 40px 30px;
-  background: radial-gradient(ellipse at 50% 50%, #ffe066 60%, #ffb700 90%, #ffecb3 100%);
+  width: 400px;
+  height: 400px;
+  min-width: 180px;
+  min-height: 180px;
+  max-width: 90vw;
+  max-height: 90vw;
+  margin: 80px auto 40px auto;
+  padding: 36px 28px;
+  background: radial-gradient(circle at 50% 50%, #ffe066 60%, #ffb700 90%, #ffecb3 100%);
   border-radius: 50%;
   text-align: center;
   box-shadow:
@@ -182,47 +183,93 @@ body {
   filter: drop-shadow(0 0 40px #ffe066cc);
   transition: box-shadow 0.4s;
   overflow: hidden;
+  word-break: break-word;
 }
 
 @media (max-width: 600px) {
   .bio {
-    width: 98vw;
-    min-width: 140px;
-    min-height: 140px;
-    padding: 12vw 4vw;
+    width: 90vw;
+    height: 90vw;
+    min-width: 120px;
+    min-height: 120px;
+    padding: 7vw 4vw;
     font-size: 0.95rem;
     border-radius: 50%;
+    margin-top: 80px;
+    margin-bottom: 24px;
+  }
+  .bio h2 {
+    font-size: 1.1rem;
+  }
+  .bio p {
+    font-size: 0.95rem;
+  }
+  .main-content {
+    top: 80px;
   }
 }
 
-/* Приховати .top-menu */
-.top-menu {
-  display: none !important;
+/* Таймер-галактика */
+#timer {
+  display: inline-block;
+  font-size: 1.2rem;
+  max-width: 220px;
+  padding: 15px 22px;
+  color: #fff;
+  background: radial-gradient(circle at 30% 30%, #a7c7ff 60%, #3a1c71 100%);
+  border-radius: 50px;
+  box-shadow:
+    0 0 18px 6px #a7c7ff88,
+    0 0 32px 12px #fff6,
+    0 0 0 4px #fff inset;
+  border: 2px solid #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: fixed;
+  top: 16px;
+  right: 32px;
+  z-index: 2000;
+  text-align: center;
+  letter-spacing: 0.5px;
+  transition: box-shadow 0.3s;
 }
 
-/* Бургер-меню завжди видно і у вигляді ракети */
+/* Стандартний бургер */
 .burger {
   display: flex !important;
   position: fixed;
   top: 18px;
   left: 18px;
-  width: 54px;
-  height: 54px;
+  width: 48px;
+  height: 48px;
   z-index: 3000;
-  background: url('img/ракета.png') no-repeat center/contain;
+  background: none;
   border: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
   cursor: pointer;
   padding: 0;
-  transition: background 0.3s;
-}
-.burger.active {
-  background: url('img/ракета1.png') no-repeat center/contain;
 }
 .burger span {
-  display: none;
+  display: block;
+  width: 32px;
+  height: 5px;
+  background: linear-gradient(90deg, #fff 60%, #a7c7ff 100%);
+  border-radius: 3px;
+  transition: 0.3s;
+}
+.burger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(10px);
+}
+.burger.active span:nth-child(2) {
+  opacity: 0;
+}
+.burger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-10px);
 }
 
-/* Бургер-меню */
+/* Бургер-меню завжди видно і у вигляді ракети */
 .burger-menu {
   display: none;
   position: fixed;
@@ -251,20 +298,26 @@ body {
 }
 
 .bio h2 {
-  font-size: 2.2rem;
+  font-size: 2rem;
   color: #c14400;
   text-shadow: 0 0 18px #fffbe6, 0 0 2px #ffb700;
   margin-bottom: 18px;
+  word-break: break-word;
 }
 
 .bio p {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: #a05a00;
   text-shadow: 0 0 8px #fffbe6;
   opacity: 0;
   transform: translateY(40px);
   animation: textFadeIn 1.2s ease forwards;
   animation-delay: 0.5s;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  max-width: 95%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Анімація для кожного абзацу з затримкою */
@@ -844,25 +897,26 @@ box-shadow:
 }
 /* Стиль самого таймера */
 #timer {
-  display: inline-block;         /* займатиме тільки потрібну ширину */
+  display: inline-block;
   font-size: 1.2rem;
-  max-width: 200px;
-  padding: 15px 20px;
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 70px;
-  box-shadow: 0 0 15px #debcf2aa;
+  max-width: 220px;
+  padding: 15px 22px;
+  color: #fff;
+  background: radial-gradient(circle at 30% 30%, #a7c7ff 60%, #3a1c71 100%);
+  border-radius: 50px;
+  box-shadow:
+    0 0 18px 6px #a7c7ff88,
+    0 0 32px 12px #fff6,
+    0 0 0 4px #fff inset;
+  border: 2px solid #fff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   position: fixed;
   top: 16px;
   right: 32px;
   z-index: 2000;
-}
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  position: fixed;
-  top: 16px;
-  right: 32px;
-  z-index: 2000;
+  text-align: center;
+  letter-spacing: 0.5px;
+  transition: box-shadow 0.3s;
 }
 
 
