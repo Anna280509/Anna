@@ -99,6 +99,7 @@ function animate() {
   requestAnimationFrame(animate);
 }
 animate();
+// --- Переклад у бургер-меню ---
 document.addEventListener('DOMContentLoaded', () => {
   const toggleLangBtn = document.getElementById('toggle-lang');
   if (!toggleLangBtn) return;

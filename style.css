@@ -160,21 +160,107 @@ body {
 .bio {
   position: relative;
   z-index: 3;
-  max-width: 900px; /* ширше */
-  margin: 100px auto 100px 60px; /* зсув вліво */
-  padding: 40px;
-  background: rgba(0, 0, 20, 0.7);
-  border-radius: 15px;
-  text-align: center; /* вирівнювання по лівому краю */
+  width: 420px;
+  min-width: 220px;
+  min-height: 220px;
+  max-width: 95vw;
+  max-height: 95vw;
+  margin: 60px auto 60px auto;
+  padding: 40px 30px;
+  background: radial-gradient(ellipse at 50% 50%, #ffe066 60%, #ffb700 90%, #ffecb3 100%);
+  border-radius: 50%;
+  text-align: center;
+  box-shadow:
+    0 0 60px 30px #ffe06688,
+    0 0 120px 60px #ffb70044,
+    0 0 0 12px #fff7c2 inset;
   animation: fadeIn 2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  filter: drop-shadow(0 0 40px #ffe066cc);
+  transition: box-shadow 0.4s;
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .bio {
+    width: 98vw;
+    min-width: 140px;
+    min-height: 140px;
+    padding: 12vw 4vw;
+    font-size: 0.95rem;
+    border-radius: 50%;
+  }
+}
+
+/* Приховати .top-menu */
+.top-menu {
+  display: none !important;
+}
+
+/* Бургер-меню завжди видно і у вигляді ракети */
+.burger {
+  display: flex !important;
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  width: 54px;
+  height: 54px;
+  z-index: 3000;
+  background: url('img/ракета.png') no-repeat center/contain;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s;
+}
+.burger.active {
+  background: url('img/ракета1.png') no-repeat center/contain;
+}
+.burger span {
+  display: none;
+}
+
+/* Бургер-меню */
+.burger-menu {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(30, 0, 60, 0.97);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2999;
+}
+.burger-menu .menu-link,
+.burger-menu .burger-lang-btn {
+  font-size: 2rem;
+  margin: 20px 0;
+  color: #fff;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+}
+.burger-menu.active {
+  display: flex;
 }
 
 .bio h2 {
-  font-size: 2.8rem;
+  font-size: 2.2rem;
+  color: #c14400;
+  text-shadow: 0 0 18px #fffbe6, 0 0 2px #ffb700;
+  margin-bottom: 18px;
 }
 
 .bio p {
-  font-size: 1.4rem;
+  font-size: 1.15rem;
+  color: #a05a00;
+  text-shadow: 0 0 8px #fffbe6;
   opacity: 0;
   transform: translateY(40px);
   animation: textFadeIn 1.2s ease forwards;
@@ -438,19 +524,16 @@ box-shadow:
 
 /* Планети-кнопки з картинками */
 .planet-btn img {
-  width: 40px;
-  height: 40px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   border-radius: 50%;
   background: #fff2;
   box-shadow: 0 0 8px #fff4;
   transition: transform 0.2s, box-shadow 0.2s;
-}
-.planet-btn:active img,
-.planet-btn.active img {
-  transform: scale(1.15);
-  box-shadow: 0 0 24px 8px #fff6;
-  border: 2px solid #fff;
+  display: block;
+  padding: 0;
+  margin: 0;
 }
 
 /* Планети на фоні */
@@ -769,6 +852,12 @@ box-shadow:
   background: rgba(255, 255, 255, 0.1);
   border-radius: 70px;
   box-shadow: 0 0 15px #debcf2aa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: fixed;
+  top: 16px;
+  right: 32px;
+  z-index: 2000;
+}
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   position: fixed;
   top: 16px;

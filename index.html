@@ -8,11 +8,6 @@
 </head>
 <body>
   <div id="timer">Завантаження таймера...</div>
-  <nav class="top-menu">
-    <a href="index.html" class="menu-link">Головна</a>
-    <a href="future.html" class="menu-link">Моє майбутнє</a>
-    <a href="achievements.html" class="menu-link">Що я вже вивчила</a>
-  </nav>
   <button class="burger" id="burger-btn" aria-label="Меню">
     <span></span><span></span><span></span>
   </button>
@@ -20,6 +15,7 @@
     <a href="index.html" class="menu-link">Головна</a>
     <a href="future.html" class="menu-link">Моє майбутнє</a>
     <a href="achievements.html" class="menu-link">Що я вже вивчила</a>
+    <button id="toggle-lang" class="lang-toggle burger-lang-btn">🔁 Переклад</button>
   </div>
   <!--Фонові зірки та планети -->
   <div class="star-background"></div>
@@ -40,7 +36,6 @@
   <div class="stars"></div>
   <div class="comets"></div>
   <div class="main-content">
-    <button id="toggle-lang" class="lang-toggle">🔁 Переклад</button>
     <section class="bio fade-in">
       <h2>
         <span class="lang-ua">👋 Привіт! Я — Аня</span>
@@ -105,6 +100,11 @@
         <img src="img/нептун.png" alt="Нептун" />
       </button>
     </div>
+  </div>
+  <div class="satellite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
   </div>
   <div class="satellite"></div>
   <script src="script.js"></script>
