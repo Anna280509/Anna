@@ -32,28 +32,8 @@ body {
 }
 
 .top-menu {
-  position: absolute;
-  top: 10px;
-  left: 20px;
-  z-index: 1000;
-  display: flex;
-  gap: 15px;
+  display: none !important; /* Полностью скрыть старое меню */
 }
-
-.menu-link {
-  text-decoration: none;
-  color: #fff;
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 8px 14px;
-  border-radius: 10px;
-  font-weight: bold;
-  transition: 0.3s ease;
-}
-
-.menu-link:hover {
-  background-color: rgba(255, 255, 255, 0.25);
-}
-
 
 /* Комети */
 .comets {
@@ -160,25 +140,137 @@ body {
 .bio {
   position: relative;
   z-index: 3;
-  max-width: 900px; /* ширше */
-  margin: 100px auto 100px 60px; /* зсув вліво */
-  padding: 40px;
-  background: rgba(0, 0, 20, 0.7);
-  border-radius: 15px;
-  text-align: left; /* вирівнювання по лівому краю */
+  width: 650px;
+  height: 650px;
+  min-width: 260px;
+  min-height: 260px;
+  max-width: 99vw;
+  max-height: 99vw;
+  margin: 80px auto 40px auto;
+  padding: 36px 28px;
+  background: radial-gradient(circle at 50% 50%, #ffe066 60%, #ffb700 90%, #ffecb3 100%);
+  border-radius: 50%;
+  text-align: center;
+  box-shadow:
+    0 0 60px 30px #ffe06688,
+    0 0 120px 60px #ffb70044,
+    0 0 0 12px #fff7c2 inset;
   animation: fadeIn 2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  filter: drop-shadow(0 0 40px #ffe066cc);
+  transition: box-shadow 0.4s;
+  overflow: hidden;
+  word-break: break-word;
+}
+
+@media (max-width: 800px) {
+  .bio {
+    width: 94vw;
+    height: 94vw;
+    min-width: 140px;
+    min-height: 140px;
+    padding: 7vw 4vw;
+    font-size: 0.95rem;
+    border-radius: 50%;
+    margin-top: 80px;
+    margin-bottom: 24px;
+  }
+  .burger {
+    top: 10px;
+    left: 10px;
+  }
+}
+
+/* Бургер завжди зверху зліва і завжди видимий */
+.burger {
+  display: flex !important;
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  width: 40px;
+  height: 40px;
+  z-index: 3000;
+  background: none;
+  border: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+.burger span {
+  display: block;
+  width: 30px;
+  height: 4px;
+  background: #fff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+.burger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(10px);
+}
+.burger.active span:nth-child(2) {
+  opacity: 0;
+}
+.burger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-10px);
+}
+
+/* Бургер-меню */
+.burger-menu {
+  display: none;
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(30, 0, 60, 0.97);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2999;
+}
+
+.burger-menu .menu-link,
+.burger-menu .burger-lang-btn {
+  font-size: 2rem;
+  margin: 20px 0;
+  color: #fff;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+}
+
+.burger-menu.active {
+  display: flex !important;
 }
 
 .bio h2 {
-  font-size: 2.8rem;
+  font-size: 2rem;
+  color: #c14400;
+  text-shadow: 0 0 18px #fffbe6, 0 0 2px #ffb700;
+  margin-bottom: 18px;
+  word-break: break-word;
 }
 
 .bio p {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
+  color: #a05a00;
+  text-shadow: 0 0 8px #fffbe6;
   opacity: 0;
   transform: translateY(40px);
   animation: textFadeIn 1.2s ease forwards;
   animation-delay: 0.5s;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  max-width: 95%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Анімація для кожного абзацу з затримкою */
@@ -378,8 +470,62 @@ box-shadow:
   .main-content .bio {
     padding: 24px;
   }
+  .burger {
+    display: flex !important; /* Обеспечить видимость на мобильных */
+  }
 }
 
+/* Адаптивність */
+@media (max-width: 900px) {
+  .top-menu {
+    display: none;
+  }
+  .burger {
+    display: flex;
+  }
+  .planet-buttons {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .main-content {
+    margin: 20px 0 0 0;
+    padding: 0 5vw;
+    max-width: 100vw;
+  }
+  .bio {
+    padding: 16px;
+    font-size: 1rem;
+  }
+}
+
+/* Планети-кнопки з картинками */
+.planet-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #fff2;
+  box-shadow: 0 0 8px #fff4;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+/* Планети на фоні */
+.planet-img {
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+.mars { background-image: url('img/mars.png'); }
+.neptune { background-image: url('img/neptune.png'); }
+.sun { background-image: url('img/sun.png'); }
+.moon { background-image: url('img/moon.png'); }
+.saturn { background-image: url('img/saturn.png'); }
+.constellation { background-image: url('img/constellation.png'); }
+.rocket-with-glow { background-image: url('img/rocket.png'); }
+.satellite { background-image: url('img/satellite.png'); }
 
 /* Зірочка по центру */
 .star-background {
@@ -642,18 +788,108 @@ box-shadow:
 }
 /* Стиль самого таймера */
 #timer {
-  display: inline-block;         /* займатиме тільки потрібну ширину */
+  display: inline-block;
   font-size: 1.2rem;
-  max-width: 200px;
-  padding: 15px 20px;
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 70px;
-  box-shadow: 0 0 15px #debcf2aa;
+  max-width: 220px;
+  padding: 15px 22px;
+  color: #fff;
+  background: radial-gradient(circle at 30% 30%, #a7c7ff 60%, #3a1c71 100%);
+  border-radius: 50px;
+  box-shadow:
+    0 0 18px 6px #a7c7ff88,
+    0 0 32px 12px #fff6,
+    0 0 0 4px #fff inset;
+  border: 2px solid #fff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   position: fixed;
-  top: 24px; /* Відступ від верхнього краю */
-  right: 32px; /* Відступ від правого краю */
-  z-index: 2000; /* Щоб таймер був поверх інших елементів */
+}
+/* 🔹 Таймер */
+.timer {
+  position: fixed;
+  top: 24px;
+  right: 32px;
+  z-index: 2000;
+  padding: 15px 22px;
+  color: #fff;
+  background: radial-gradient(circle at 30% 30%, #a7c7ff 60%, #3a1c71 100%);
+  border-radius: 50px;
+  box-shadow:
+    0 0 18px 6px #a7c7ff88,
+    0 0 32px 12px #fff6,
+    0 0 4px #fff inset;
+  border: 2px solid #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  letter-spacing: 0.5px;
+  transition: box-shadow 0.3s;
 }
 
+/* 🔹 Анімація метеора */
+@keyframes meteor1Fly {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(800px); /* або translateX(100vw) */
+    opacity: 0; /* зникає поступово */
+  }
+}
+
+/* 🔹 Метеор */
+.meteor1 {
+  position: fixed;
+  top: 120px;
+  left: 40px;
+  width: 100px;
+  height: 30px;
+  background: url('метеорит.png') no-repeat center/contain;
+  animation: meteor1Fly 12s ease-out forwards;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes meteor1Fly {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw); /* летить далеко праворуч */
+    opacity: 5; /* поступово зникає */
+    transform: translateX(800px); /* Стільки px праворуч */
+  }
+}
+/* Стиль самого таймера */
+#timer {
+  display: inline-block;
+  font-size: 1.2rem;
+  max-width: 220px;
+  padding: 15px 22px;
+  color: #fff;
+  background: radial-gradient(circle at 30% 30%, #a7c7ff 60%, #3a1c71 100%);
+  border-radius: 50px;
+  box-shadow:
+    0 0 18px 6px #a7c7ff88,
+    0 0 32px 12px #fff6,
+    0 0 0 4px #fff inset;
+  border: 2px solid #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: fixed;
+  top: 16px;
+  right: 32px;
+  z-index: 2000;
+  text-align: center;
+  letter-spacing: 0.5px;
+  transition: box-shadow 0.3s;
+}
+  .timer {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: fixed;
+  top: 16px;
+  right: 32px;
+  z-index: 2000;
+  text-align: center;
+  letter-spacing: 0.5px;
+  transition: box-shadow 0.3s;
+}

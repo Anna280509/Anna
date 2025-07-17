@@ -99,6 +99,7 @@ function animate() {
   requestAnimationFrame(animate);
 }
 animate();
+// --- Переклад у бургер-меню ---
 document.addEventListener('DOMContentLoaded', () => {
   const toggleLangBtn = document.getElementById('toggle-lang');
   if (!toggleLangBtn) return;
@@ -176,3 +177,21 @@ function updateTimer() {
 
 setInterval(updateTimer, 1000);
 updateTimer();
+// --- Бургер-меню ---
+document.addEventListener('DOMContentLoaded', () => {
+  const burgerBtn = document.getElementById('burger-btn');
+  const burgerMenu = document.getElementById('burger-menu');
+  if (burgerBtn && burgerMenu) {
+    burgerBtn.addEventListener('click', () => {
+      burgerBtn.classList.toggle('active');
+      burgerMenu.classList.toggle('active');
+    });
+    // Закрити меню при кліку на посилання
+    burgerMenu.querySelectorAll('.menu-link').forEach(link => {
+      link.addEventListener('click', () => {
+        burgerBtn.classList.remove('active');
+        burgerMenu.classList.remove('active');
+      });
+    });
+  }
+});
