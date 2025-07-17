@@ -408,9 +408,9 @@ box-shadow:
   display: flex;
   justify-content: center;
   gap: 32px;
-  margin-top: 60px;
-  margin-bottom: 20px;
-  z-index: 0;
+  margin-top: -30px;
+  margin-bottom: -20px;
+  z-index: 3;
   position: relative;
 }
 
@@ -598,7 +598,6 @@ box-shadow:
   transform: translate(-50%, -50%);
   z-index: 5;
 }
-
 /* Сузір'я */
 .constellation {
   position: fixed;
@@ -643,7 +642,7 @@ box-shadow:
  width: 100px; /* Ширина галактики */
  height: 110px; /* Висота галактики */
  background: url('сатурн.png') no-repeat center/contain; /* Замініть 'saturn.png' на шлях до вашого зображення */
- z-index: 0; /* Щоб галактика була над фоном, але під іншими елементами */
+ z-index: 3; /* Щоб галактика була над фоном, але під іншими елементами */
  animation: saturnFloat 5s ease-in-out infinite; /* Анімація плавного руху */
 }
 
@@ -680,7 +679,7 @@ box-shadow:
  width: 120px; /* Ширина галактики */
  height: 130px; /* Висота галактики */
  background: url('сонце.png') no-repeat center/contain; /* Замініть 'sun.png' на шлях до вашого зображення */
- z-index: 0; /* Щоб галактика була над фоном, але під іншими елементами */
+ z-index: 3; /* Щоб галактика була над фоном, але під іншими елементами */
  animation: sunFloat 7s ease-in-out infinite; /* Анімація плавного руху */
 }
 
@@ -697,7 +696,7 @@ box-shadow:
  width: 140px; /* Ширина галактики */
  height: 150px; /* Висота галактики */
  background: url('місяць.png') no-repeat center/contain; /* Замініть 'moon.png' на шлях до вашого зображення */
- z-index: 0; /* Щоб галактика була над фоном, але під іншими елементами */
+ z-index: 3; /* Щоб галактика була над фоном, але під іншими елементами */
  animation: moonFloat 7s ease-in-out infinite; /* Анімація плавного руху */
 }
 
@@ -714,7 +713,7 @@ box-shadow:
  width: 100px; /* Ширина галактики */
  height: 100px; /* Висота галактики */
  background: url('нептун.png') no-repeat center/contain; /* Замініть 'neptune.png' на шлях до вашого зображення */
- z-index: 0; /* Щоб галактика була над фоном, але під іншими елементами */
+ z-index: 3; /* Щоб галактика була над фоном, але під іншими елементами */
  animation: neptuneFloat 7s ease-in-out infinite; /* Анімація плавного руху */
 }
 
@@ -732,7 +731,7 @@ box-shadow:
  width: 110px; /* Ширина галактики */
  height: 105px; /* Висота галактики */
  background: url('марс.png') no-repeat center/contain; /* Замініть 'mars.png' на шлях до вашого зображення */
- z-index: 0; /* Щоб галактика була над фоном, але під іншими елементами */
+ z-index: 3; /* Щоб галактика була над фоном, але під іншими елементами */
  animation: marsFloat 7s ease-in-out infinite; /* Анімація плавного руху */
 }
 
@@ -812,8 +811,8 @@ box-shadow:
 }
 .meteor1 {
   position: fixed;
-  top: 120px; /* висота, з якої стартує */
-  left: 40px; /* починає за межами екрана */
+  top: 120px;
+  left: 40px;
   width: 100px;
   height: 30px;
   background: url('метеорит.png') no-repeat center/contain;
