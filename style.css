@@ -810,38 +810,6 @@ box-shadow:
   letter-spacing: 0.5px;
   transition: box-shadow 0.3s;
 }
-  padding: 15px 22px;
-  color: #fff;
-  background: radial-gradient(circle at 30% 30%, #a7c7ff 60%, #3a1c71 100%);
-  border-radius: 50px;
-  box-shadow:
-    0 0 18px 6px #a7c7ff88,
-    0 0 32px 12px #fff6,
-    0 0 0 4px #fff inset;
-  border: 2px solid #fff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  position: fixed;
-  top: 16px;
-  right: 32px;
-  z-index: 2000;
-  text-align: center;
-  letter-spacing: 0.5px;
-  transition: box-shadow 0.3s;
-}
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  position: fixed;
-  top: 16px;
-  right: 32px;
-  z-index: 2000;
-  text-align: center;
-  letter-spacing: 0.5px;
-  transition: box-shadow 0.3s;
-  100% {
-    transform: translateX(100vw); /* летить далеко праворуч */
-    opacity: 5; /* поступово зникає */
-    transform: translateX(800px); /* Стільки px праворуч */
-  }
-}
 .meteor1 {
   position: fixed;
   top: 120px; /* висота, з якої стартує */
@@ -888,14 +856,6 @@ box-shadow:
   letter-spacing: 0.5px;
   transition: box-shadow 0.3s;
 }
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  position: fixed;
-  top: 16px;
-  right: 32px;
-  z-index: 2000;
-  text-align: center;
-  letter-spacing: 0.5px;
-  transition: box-shadow 0.3s;
 
 
 
