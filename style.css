@@ -319,7 +319,7 @@ body {
 .future-text {
   max-width: none;
   width: 90vw; 
-  margin: 80px auto; /* Увеличиваем отступ сверху / Increase top margin */
+  margin: 20px auto; /* Уменьшаем отступ сверху для видимости / Reduce top margin for visibility */
   background-color: rgba(255, 255, 255, 0.07);
   padding: 25px 20px;
   border-radius: 12px;
@@ -329,6 +329,7 @@ body {
   line-height: 1.6;
   color: #fff;
   z-index: 10; /* Добавляем z-index чтобы текст был поверх фоновых элементов / Add z-index for text to be above background elements */
+  position: relative; /* Добавляем относительное позиционирование / Add relative positioning */
   column-count: 2; /* Добавляем колонки / Add columns */
   column-gap: 40px; /* Расстояние между колонками / Gap between columns */
 /* 🔲 ОБВОДКА ЧОРНА І ГРУБША */
@@ -371,7 +372,7 @@ body {
   font-size: 18px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
-  margin: 80px auto; /* Увеличиваем отступ сверху / Increase top margin */
+  margin: 20px auto; /* Уменьшаем отступ сверху для видимости / Reduce top margin for visibility */
 
   text-shadow:
     1px 1px 0 #000,
@@ -384,6 +385,20 @@ box-shadow:
     0 0 40px 10px rgba(174, 5, 247, 0.3); /* Фиолетовое свечение / Purple glow */
 
   animation: fadeIn 1.5s ease forwards;
+}
+
+/* Контейнеры для страниц достижений и будущего / Containers for achievements and future pages */
+.achievement-container,
+.future-container {
+  position: absolute; /* Фиксированное позиционирование как на главной / Fixed positioning like on main page */
+  top: 70px; /* Отступ от верха / Top offset */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @keyframes fadeIn {
