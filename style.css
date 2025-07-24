@@ -319,15 +319,18 @@ body {
 .future-text {
   max-width: none;
   width: 90vw; 
-  margin: 50px auto;
+  margin: 80px auto; /* Увеличиваем отступ сверху / Increase top margin */
   background-color: rgba(255, 255, 255, 0.07);
   padding: 25px 20px;
   border-radius: 12px;
   backdrop-filter: blur(6px);
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
-  font-size: 12px;
+  font-size: 16px; /* Увеличиваем размер шрифта для лучшей читаемости / Increase font size for better readability */
   line-height: 1.6;
   color: #fff;
+  z-index: 10; /* Добавляем z-index чтобы текст был поверх фоновых элементов / Add z-index for text to be above background elements */
+  column-count: 2; /* Добавляем колонки / Add columns */
+  column-gap: 40px; /* Расстояние между колонками / Gap between columns */
 /* 🔲 ОБВОДКА ЧОРНА І ГРУБША */
   text-shadow:
      1px 1px 0 #000,
@@ -345,10 +348,7 @@ body {
   margin-bottom: 20px;
   text-align: justify;
 }
-.future-text {
-  column-count: 2;
-  column-gap: 40px;
-}
+
 .highlight {
   color: #bf52ff;          /* Золотистий колір */
   font-weight: 700;        /* Жирний */
@@ -363,14 +363,15 @@ body {
   
   background: rgba(174, 5, 247, 0.16);
   backdrop-filter: blur(6px);
-  padding: 10px 75px;
+  padding: 20px 40px; /* Увеличиваем внутренние отступы / Increase internal padding */
   border-radius: 10px;
   color: #ffffff;
-  max-width: 700px;
+  max-width: 800px; /* Увеличиваем ширину / Increase width */
+  width: calc(90vw - 80px); /* Адаптивная ширина / Adaptive width */
   font-size: 18px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
-  margin: 70px auto;
+  margin: 80px auto; /* Увеличиваем отступ сверху / Increase top margin */
 
   text-shadow:
     1px 1px 0 #000,
@@ -379,8 +380,8 @@ body {
     -1px -1px 0 #000;
 
 box-shadow:
-    10px 0 20px 5px rgba(255, 255, 255, 0.7),
-    -10px 0 20px 5px rgba(255, 255, 255, 0.7);
+    0 0 20px 5px rgba(255, 255, 255, 0.3), /* Улучшенная тень / Improved shadow */
+    0 0 40px 10px rgba(174, 5, 247, 0.3); /* Фиолетовое свечение / Purple glow */
 
   animation: fadeIn 1.5s ease forwards;
 }
@@ -394,12 +395,6 @@ box-shadow:
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.achievement-text {
-  /* ... твої інші стилі ... */
-  
-  animation: fadeIn 1.5s ease forwards;
 }
 
 
