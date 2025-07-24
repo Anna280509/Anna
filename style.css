@@ -699,3 +699,25 @@ body {
     background-position: 0% 50%;
   }
 }
+/* Аудіо файл */
+.fixed-audio {
+  position: fixed;
+  bottom: 333px;
+  right: -10%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  background-color: rgba(255, 255, 255, 0.15); /* прозорий білий */
+  backdrop-filter: blur(10px);                /* ефект скла */
+  -webkit-backdrop-filter: blur(10px);        /* для Safari */
+  padding: 8px 10px;
+  border-radius: 9px;
+  border: 1px solid rgba(255, 255, 255, 0.3);  /* рамка для блиску */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);   /* легка тінь */
+}
+
+.fixed-audio audio {
+  width: 250px;
+  max-width: 30vw;
+  background: transparent;
+}
+
