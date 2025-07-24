@@ -1,4 +1,3 @@
-<!-- future.html -->
 <!DOCTYPE html>
 <html lang="uk">
 <head>
@@ -8,51 +7,78 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Можна залишити той самий фон, якщо хочеш -->
+  <!-- Добавлен таймер как на главной странице -->
+  <div id="timer">Завантаження таймера...</div>
+  
+  <!-- Добавлен бургер-меню для навигации -->
+  <button class="burger" id="burger-btn" aria-label="Меню">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="burger-menu" id="burger-menu">
+    <a href="index.html" class="menu-link">Головна</a>
+    <a href="future.html" class="menu-link">Моє майбутнє</a>
+    <a href="achievements.html" class="menu-link">Що я вже вивчила</a>
+    <!-- Добавлена кнопка переключения языка -->
+    <button id="toggle-lang" class="lang-toggle burger-lang-btn">🔁 Переклад</button>
+  </div>
+
+  <!-- Добавлены фоновые элементы для космической темы -->
   <div class="star-background"></div>
   <div class="comets"></div>
-  <div class="mars"></div>
-  <div class="neptune"></div>
-  <div class="sun"></div>
-  <div class="moon"></div>
+  <div class="mars planet-img"></div>
+  <div class="neptune planet-img"></div>
+  <div class="sun planet-img"></div>
+  <div class="meteor"></div>
+  <div class="meteor1"></div>
+  <div class="moon planet-img"></div>
   <div class="galaxy"></div>
-  <div class="saturn"></div>
+  <div class="saturn planet-img"></div>
+  <div class="comets-extra"></div>
+  <div class="constellation"></div>
+  <!-- Добавлен контейнер орбиты с ракетой -->
+  <div class="orbit-container">
+    <div class="rocket-with-glow"></div>
+  </div>
+  <div class="stars"></div>
+  <div class="comets"></div>
 
-  <!-- Якщо потрібні ефекти -->
-  <script src="script.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Моє майбутнє</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <!-- Меню зверху -->
-  <div class="top-menu">
-  <a href="index.html" class="menu-link">Головна</a>
-  <a href="future.html" class="menu-link">Моє майбутнє</a>
-  <a href="achievements.html" class="menu-link">Що я вже вивчила</a>
-</div>
-
-  <!-- Основний контент -->
+  <!-- Изменена структура контента -->
   <section class="bio future-text fade-in">
-    <h2>🔮 Моє життя через 10 років</h2>
+    <h2>
+      <!-- Добавлена поддержка двух языков -->
+      <span class="lang-ua">🔮 Моє життя через 10 років</span>
+      <span class="lang-en hidden">🔮 My Life in 10 Years</span>
+    </h2>
 
-    <p><span class="highlight">🌟Мені 26 років,</span> і я з вдячністю та задоволенням дивлюся на своє життя. За ці роки я пройшла чималий шлях, і кожен крок був важливим.</p>
+    <p>
+      <span class="lang-ua"><span class="highlight">🌟Мені 26 років,</span> і я з вдячністю та задоволенням дивлюся на своє життя. За ці роки я пройшла чималий шлях, і кожен крок був важливим.</span>
+      <span class="lang-en hidden"><span class="highlight">🌟I'm 26 years old,</span> and I look at my life with gratitude and satisfaction. Over these years, I've come a long way, and every step was important.</span>
+    </p>
 
-    <p><span class="highlight">💻Я працюю на роботі своєї мрії</span> — створюю дизайни, які поєднують креативність та користь. Це не просто джерело доходу, а справжнє покликання. Мої проєкти здобули визнання, деякі стали відомими за межами країни. Зараз я також навчаю інших, ділюся досвідом і натхненням.</p>
+    <p>
+      <span class="lang-ua"><span class="highlight">💻Я працюю на роботі своєї мрії</span> — створюю дизайни, які поєднують креативність та користь. Це не просто джерело доходу, а справжнє покликання. Мої проєкти здобули визнання, деякі стали відомими за межами країни. Зараз я також навчаю інших, ділюся досвідом і натхненням.</span>
+      <span class="lang-en hidden"><span class="highlight">💻I work at my dream job</span> — creating designs that combine creativity and utility. It's not just a source of income, but a true calling. My projects have gained recognition, some became known beyond the country. Now I also teach others, sharing experience and inspiration.</span>
+    </p>
 
-    <p><span class="highlight">👪Моя родина</span> — моя опора. Ми з чоловіком підтримуємо одне одного та зростаємо разом. Я здійснила багато мрій: вільно володію двома мовами, активно вивчаю третю, багато подорожувала й не збираюся зупинятись.</p>
+    <p>
+      <span class="lang-ua"><span class="highlight">👪Моя родина</span> — моя опора. Ми з чоловіком підтримуємо одне одного та зростаємо разом. Я здійснила багато мрій: вільно володію двома мовами, активно вивчаю третю, багато подорожувала й не збираюся зупинятись.</span>
+      <span class="lang-en hidden"><span class="highlight">👪My family</span> is my support. My husband and I support each other and grow together. I've fulfilled many dreams: I speak two languages fluently, actively learning a third, traveled a lot and don't plan to stop.</span>
+    </p>
 
-    <p><span class="highlight">🧘‍♀️Йога стала частиною мого життя</span> — я не лише практикую, а й викладаю. Медитації та подорожі допомогли мені краще відчути себе й світ.</p>
+    <p>
+      <span class="lang-ua"><span class="highlight">🧘‍♀️Йога стала частиною мого життя</span> — я не лише практикую, а й викладаю. Медитації та подорожі допомогли мені краще відчути себе й світ.</span>
+      <span class="lang-en hidden"><span class="highlight">🧘‍♀️Yoga became part of my life</span> — I not only practice but also teach. Meditations and travels helped me better feel myself and the world.</span>
+    </p>
 
-    <p><span class="highlight">🚀Я стала більш усвідомленою,</span> відкритою до змін і впевнено дивлюсь у майбутнє. Попереду ще багато планів: від подорожі на безлюдний острів до втілення мрій батьків. І я готова до кожного нового кроку.</p>
+    <p>
+      <span class="lang-ua"><span class="highlight">🚀Я стала більш усвідомленою,</span> відкритою до змін і впевнено дивлюсь у майбутнє. Попереду ще багато планів: від подорожі на безлюдний острів до втілення мрій батьків. І я готова до кожного нового кроку.</span>
+      <span class="lang-en hidden"><span class="highlight">🚀I became more conscious,</span> open to changes and confidently look to the future. There are still many plans ahead: from traveling to a deserted island to fulfilling my parents' dreams. And I'm ready for every new step.</span>
+    </p>
   </section>
 
+  <!-- Добавлен спутник для анимации -->
+  <div class="satellite"></div>
+  <!-- Подключен JavaScript для интерактивности -->
   <script src="script.js"></script>
 </body>
 </html>
