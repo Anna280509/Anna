@@ -319,7 +319,7 @@ body {
 .future-text {
   max-width: none;
   width: 90vw; 
-  margin: 20px auto; /* Уменьшаем отступ сверху для видимости / Reduce top margin for visibility */
+  margin: 60px auto; /* Уменьшаем отступ сверху для видимости / Reduce top margin for visibility */
   background-color: rgba(255, 255, 255, 0.07);
   padding: 25px 20px;
   border-radius: 12px;
