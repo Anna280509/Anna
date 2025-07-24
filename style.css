@@ -512,68 +512,6 @@ box-shadow:
   margin: 0;
 }
 
-/* Планети на фоні */
-.planet-img {
-  background-size: contain !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-}
-.mars { background-image: url('img/mars.png'); }
-.neptune { background-image: url('img/neptune.png'); }
-.sun { background-image: url('img/sun.png'); }
-.moon { background-image: url('img/moon.png'); }
-.saturn { background-image: url('img/saturn.png'); }
-.constellation { background-image: url('img/constellation.png'); }
-.rocket-with-glow { background-image: url('img/rocket.png'); }
-.satellite { background-image: url('img/satellite.png'); }
-
-/* Зірочка по центру */
-.star-background {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  background: url('зірочки.png') no-repeat center/cover; /* Замініть 'star.png' на шлях до вашого зображення */
-  transform: translate(-50%, -50%);
-  z-index: 1; /* Щоб зірочка була позаду всіх елементів */
-}
-.orbit-container {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 600px; /* ширина орбіти */
-  height: 600px; /* висота орбіти */
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  animation: rotateOrbit 20s linear infinite;
-  z-index: 2;
-}
-
-.rocket-with-glow {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 100px;
-  height: 200px;
-  background: url('ракета.png') no-repeat center/contain;
-  transform: translateX(-50%);
-  animation: rocketOrbit 15s linear infinite;
-}
-
-/* 🌠 Світловий шлейф */
-.rocket-glow {
-  position: absolute;
-  top: 50%;
-  left: -60px; /* позаду ракети */
-  width: 80px;
-  height: 20px;
-  background: radial-gradient(circle, rgba(255,255,150,0.7), transparent 70%);
-  filter: blur(12px);
-  animation: glowPulse 1s ease-in-out infinite;
-  transform: translateY(-50%);
-  z-index: -1;
-}
 
 @keyframes glowPulse {
   0%, 100% { opacity: 0.7; }
@@ -606,7 +544,7 @@ box-shadow:
   width: 250px; /* Ширина зображення */
   height: 350px; /* Висота зображення */
   background: url('сузіря.png') no-repeat center/contain; /* Замініть 'сузіря.png' на шлях до вашого зображення */
-  z-index: 2; /* Щоб сузір'я було над фоном, але під іншими елементами */
+  z-index: 3; /* Щоб сузір'я було над фоном, але під іншими елементами */
   opacity: 0.9; /* Напівпрозорість */
   animation: constellationTwinkle 4s infinite alternate; /* Анімація мерехтіння */
 }
@@ -634,23 +572,6 @@ box-shadow:
   50% { transform: translateY(-10px); }
 }
 
-/* сатурн на фоні */
-.saturn {
- position: fixed;
- bottom: 190px; /* Відступ від нижнього краю */
- left: 300px; /* Відступ від лівого краю */
- width: 100px; /* Ширина галактики */
- height: 110px; /* Висота галактики */
- background: url('сатурн.png') no-repeat center/contain; /* Замініть 'saturn.png' на шлях до вашого зображення */
- z-index: 3; /* Щоб галактика була над фоном, але під іншими елементами */
- animation: saturnFloat 5s ease-in-out infinite; /* Анімація плавного руху */
-}
-
-/* Анімація для сатурна*/
-@keyframes saturnFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
 .lang-toggle {
   background: #c144ff;
   color: white;
@@ -670,59 +591,6 @@ box-shadow:
 .hidden {
   display: none;
 }
-
-/* сонце на фоні */
-.sun {
- position: fixed;
- bottom: 290px; /* Відступ від нижнього краю */
- left: 400px; /* Відступ від лівого краю */
- width: 120px; /* Ширина галактики */
- height: 130px; /* Висота галактики */
- background: url('сонце.png') no-repeat center/contain; /* Замініть 'sun.png' на шлях до вашого зображення */
- z-index: 3; /* Щоб галактика була над фоном, але під іншими елементами */
- animation: sunFloat 7s ease-in-out infinite; /* Анімація плавного руху */
-}
-
-/* Анімація для сонця*/
-@keyframes sunFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-/* місяць на фоні */
-.moon {
- position: fixed;
- bottom: 310px; /* Відступ від нижнього краю */
- right: 290px; /* Відступ від правого краю */
- width: 140px; /* Ширина галактики */
- height: 150px; /* Висота галактики */
- background: url('місяць.png') no-repeat center/contain; /* Замініть 'moon.png' на шлях до вашого зображення */
- z-index: 3; /* Щоб галактика була над фоном, але під іншими елементами */
- animation: moonFloat 7s ease-in-out infinite; /* Анімація плавного руху */
-}
-
-/* Анімація для сонця*/
-@keyframes moonFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-/* нептун на фоні */
-.neptune {
- position: fixed;
- bottom: 360px; /* Відступ від нижнього краю */
- right: 440px; /* Відступ від правого краю */
- width: 100px; /* Ширина галактики */
- height: 100px; /* Висота галактики */
- background: url('нептун.png') no-repeat center/contain; /* Замініть 'neptune.png' на шлях до вашого зображення */
- z-index: 3; /* Щоб галактика була над фоном, але під іншими елементами */
- animation: neptuneFloat 7s ease-in-out infinite; /* Анімація плавного руху */
-}
-
-/* Анімація для сонця*/
-@keyframes neptuneFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
 /* Стиль самого таймера */
 #timer {
   display: inline-block;
@@ -793,6 +661,31 @@ box-shadow:
   transition: box-shadow 0.3s;
 }
 
+/* Градієнт на все тіло */
+body {
+  background: linear-gradient(270deg, #ff6ec4, #7873f5, #48c6ef, #9437d7);
+  background-size: 800% 800%;
+  animation: gradientFlow 10s ease infinite;
 
+  /* Центрування контенту (не обов'язково) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+}
 
+/* Анімація переливання градієнта */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
