@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Галерея</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Добавлен бургер-меню для навигации -->
+  <button class="burger" id="burger-btn" aria-label="Меню">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="burger-menu" id="burger-menu">
+    <a href="index.html" class="menu-link">Головна</a>
+    <a href="future.html" class="menu-link">Моє майбутнє</a>
+    <a href="achievements.html" class="menu-link">Що я вже вивчила</a>
+    <a href="gallary.html" class="menu-link">Моя галерея</a>
+    <!-- Добавлена кнопка переключения языка -->
+    <button id="toggle-lang" class="lang-toggle burger-lang-btn">🔁 Переклад</button>
+  </div>
+
+  <h1 class="title">Моя галерея</h1>
+
+  <div class="gallery">
+  <img src="img/photo1.jfif" alt="Фото 1">
+  <img src="img/photo2.jfif" alt="Фото 2">
+  <img src="img/photo3.jpg" alt="Фото 3">
+  <img src="img/photo4.jpeg" alt="Фото 4">
+  <img src="img/photo5.png" alt="Фото 5">
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+
+    // Збільшення при натисканні
+    document.querySelectorAll('.gallery img').forEach(img => {
+      img.addEventListener('click', () => {
+        img.classList.toggle('zoomed');
+      });
+    });
+  </script>
+<!-- Подключен JavaScript для интерактивности -->
+  <script src="script.js"></script>
+</body>
+</html>

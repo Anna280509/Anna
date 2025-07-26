@@ -1,5 +1,40 @@
-// --- Логіка для кнопок-планет і показу тексту ---
 document.addEventListener('DOMContentLoaded', () => {
+  // --- Логіка бургер-меню ---
+  const burgerBtn = document.getElementById('burger-btn');
+  const burgerMenu = document.getElementById('burger-menu');
+
+  if (burgerBtn && burgerMenu) {
+    burgerBtn.addEventListener('click', () => {
+      burgerBtn.classList.toggle('active');
+      burgerMenu.classList.toggle('active');
+    });
+
+    // Закриває меню при кліку на будь-яке посилання
+    burgerMenu.querySelectorAll('.menu-link').forEach(link => {
+      link.addEventListener('click', () => {
+        burgerBtn.classList.remove('active');
+        burgerMenu.classList.remove('active');
+      });
+    });
+  }
+
+  // --- Переклад у бургер-меню ---
+  const toggleLangBtn = document.getElementById('toggle-lang');
+  if (toggleLangBtn) {
+    let isUkrainian = true;
+    toggleLangBtn.addEventListener('click', () => {
+      const uaTexts = document.querySelectorAll('.lang-ua');
+      const enTexts = document.querySelectorAll('.lang-en');
+
+      uaTexts.forEach(el => el.classList.toggle('hidden'));
+      enTexts.forEach(el => el.classList.toggle('hidden'));
+
+      toggleLangBtn.textContent = isUkrainian ? '🔁 Translate' : '🔁 Переклад';
+      isUkrainian = !isUkrainian;
+    });
+  }
+
+  // --- Планети та секції ---
   const planetBtns = document.querySelectorAll('.planet-btn');
   const bioSections = document.querySelectorAll('.bio-section');
 
@@ -29,28 +64,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Показати першу секцію при завантаженні
   if (planetBtns.length && bioSections.length) {
     showSection(planetBtns[0].getAttribute('data-planet'));
   }
 });
-document.querySelectorAll('.planet-btn').forEach(button => {
-  button.addEventListener('click', () => {
-    const planet = button.dataset.planet;
-    document.querySelectorAll('.bio-section').forEach(section => {
-      if (section.dataset.planet === planet) {
-        section.classList.toggle('expanded');
-      } else {
-        section.classList.remove('expanded');
-      }
-    });
-  });
-});
+
 // --- Анімація зірок ---
 const canvas = document.createElement('canvas');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-document.querySelector('.stars').appendChild(canvas);
+document.querySelector('.stars')?.appendChild(canvas); // перевірка на наявність
 const ctx = canvas.getContext('2d');
 
 let stars = [];
@@ -80,7 +103,6 @@ class Star {
   }
 }
 
-// Ініціалізація зірок
 function initStars() {
   stars = [];
   for (let i = 0; i < maxStars; i++) {
@@ -89,7 +111,6 @@ function initStars() {
 }
 initStars();
 
-// Анімація
 function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   stars.forEach(star => {
@@ -99,48 +120,31 @@ function animate() {
   requestAnimationFrame(animate);
 }
 animate();
-// --- Переклад у бургер-меню ---
-document.addEventListener('DOMContentLoaded', () => {
-  const toggleLangBtn = document.getElementById('toggle-lang');
-  if (!toggleLangBtn) return;
 
-  let isUkrainian = true;
-
-  toggleLangBtn.addEventListener('click', () => {
-    const uaTexts = document.querySelectorAll('.lang-ua');
-    const enTexts = document.querySelectorAll('.lang-en');
-
-    uaTexts.forEach(el => el.classList.toggle('hidden'));
-    enTexts.forEach(el => el.classList.toggle('hidden'));
-
-    toggleLangBtn.textContent = isUkrainian ? '🔁 Translate' : '🔁 Переклад';
-    isUkrainian = !isUkrainian;
-  });
-});
+// --- Метеори ---
 function launchMeteor() {
   const meteor = document.createElement('div');
   meteor.classList.add('meteor');
   document.body.appendChild(meteor);
 
-  setTimeout(() => {
-    meteor.remove(); // прибираємо з DOM після завершення анімації
-  }, 3000);
+  setTimeout(() => meteor.remove(), 3000);
 }
-document.addEventListener('click', () => {
-  launchMeteor();
-  launchMeteor1();
-});
 
 function launchMeteor1() {
   const meteor1 = document.createElement('div');
   meteor1.classList.add('meteor1');
   document.body.appendChild(meteor1);
 
-  setTimeout(() => {
-    meteor1.remove(); // прибираємо з DOM після завершення анімації
-  }, 3000);
+  setTimeout(() => meteor1.remove(), 3000);
 }
-const birthDate = new Date(2009, 4, 28, 5, 5, 0); // Вкажи свою дату народження
+
+document.addEventListener('click', () => {
+  launchMeteor();
+  launchMeteor1();
+});
+
+// --- Таймер життя ---
+const birthDate = new Date(2009, 4, 28, 5, 5, 0); // Заміни на свою дату
 
 function updateTimer() {
   const now = new Date();
@@ -177,22 +181,4 @@ function updateTimer() {
 
 setInterval(updateTimer, 1000);
 updateTimer();
-document.addEventListener('DOMContentLoaded', () => {
-  const burgerBtn = document.getElementById('burger-btn');
-  const burgerMenu = document.getElementById('burger-menu');
-
-  if (burgerBtn && burgerMenu) {
-    burgerBtn.addEventListener('click', () => {
-      burgerBtn.classList.toggle('active');
-      burgerMenu.classList.toggle('active');
-    });
-
-    // Закриваємо меню при кліку на посилання
-    burgerMenu.querySelectorAll('.menu-link').forEach(link => {
-      link.addEventListener('click', () => {
-        burgerBtn.classList.remove('active');
-        burgerMenu.classList.remove('active');
-      });
-    });
-  }
-});
+// --- Галерея ---
