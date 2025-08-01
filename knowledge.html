@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📘 Курс SQL за 10 днів</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Добавлен бургер-меню для навигации -->
+  <button class="burger" id="burger-btn" aria-label="Меню">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="burger-menu" id="burger-menu">
+    <a href="index.html" class="menu-link">Головна</a>
+    <a href="future.html" class="menu-link">Моє майбутнє</a>
+    <a href="achievements.html" class="menu-link">Що я вже вивчила</a>
+    <a href="gallary.html" class="menu-link">Моя галерея</a>
+    <a href="knowledge.html" class="menu-link">Знання</a>
+    <!-- Добавлена кнопка переключения языка -->
+    <button id="toggle-lang" class="lang-toggle burger-lang-btn">🔁 Переклад</button>
+  </div>
+
+  <h1>📘 КУРС: SQL за 10 днів (для початківців)</h1>
+
+  <div class="day">
+    <h2>🔵 ДЕНЬ 1: Що таке SQL і як із ним працювати</h2>
+    <p>🔹 SQL (Structured Query Language) — це мова для роботи з базами даних.<br>
+    🔹 Усе зберігається у таблицях: як Excel, але в системі.</p>
+
+    <p><strong>Основні поняття:</strong><br>
+    <strong>Таблиця students</strong><br>
+    id – номер<br>
+    name – ім’я<br>
+    age – вік</p>
+
+    <p><strong>Де тренуватись:</strong><br>
+    👉 SQLBolt – Почни тут<br>
+    👉 W3Schools SQL Try-it</p>
+
+    <div class="note">🎯 <strong>Мета дня:</strong> відкрити сайт і подивитися, як виглядає SQL-запит.</div>
+  </div>
+
+  <div class="day">
+    <h2>🔵 ДЕНЬ 2: SELECT — виводимо дані з таблиці</h2>
+    <p>🔹 SELECT — це команда «показати мені дані».</p>
+
+    <pre>SELECT * FROM students;</pre>
+    <p>🔹 * означає "всі стовпчики".</p>
+
+    <pre>SELECT name, age FROM students;</pre>
+
+    <div class="note">🧠 <strong>Тренуйся:</strong> Виведи тільки name і age<br>
+    Спробуй <code>SELECT grade FROM students;</code></div>
+  </div>
+
+  <div class="day">
+    <h2>🔵 ДЕНЬ 3: WHERE — фільтруємо дані</h2>
+    <p>🔹 WHERE — умова.</p>
+
+    <pre>SELECT * FROM students WHERE age > 15;</pre>
+
+    <p>🔹 Інші приклади:</p>
+    <pre>
+SELECT * FROM students WHERE name = 'Аня';
+SELECT * FROM students WHERE age BETWEEN 14 AND 16;
+SELECT * FROM students WHERE name LIKE 'А%';
+    </pre>
+
+    <div class="note">🧠 <strong>Тренуйся:</strong><br>
+    Знайди учнів, старших за 14<br>
+    Знайди імена, які починаються на "О"</div>
+  </div>
+
+  <div class="day">
+    <h2>🔵 ДЕНЬ 4: Сортування — ORDER BY</h2>
+    <p>🔹 Сортуємо результати:</p>
+    <pre>
+SELECT * FROM students ORDER BY age ASC;
+SELECT * FROM students ORDER BY age DESC;
+    </pre>
+    <p>ASC — зростання<br>DESC — спадання</p>
+
+    <p>🔹 Комбінуємо з WHERE:</p>
+    <pre>SELECT name, age FROM students WHERE age > 14 ORDER BY age DESC;</pre>
+
+    <div class="note">🧠 <strong>Тренуйся:</strong> Знайди учнів із віком 15+ і відсортуй їх від найстаршого до наймолодшого.</div>
+  </div>
+
+  <div class="day">
+    <h2>🔵 ДЕНЬ 5: INSERT — додаємо дані</h2>
+    <p>🔹 Додаємо новий рядок до таблиці:</p>
+    <pre>
+INSERT INTO students (name, age, grade)
+VALUES ('Іван', 14, '8-А');
+    </pre>
+    <p>🔹 Кожен INSERT — це новий запис.</p>
+
+    <div class="note">🧠 <strong>Тренуйся:</strong> Створи 2 нових учнів. Напиши два INSERT.</div>
+  </div>
+
+  <div class="day">
+    <h2>🔵 ДЕНЬ 6: UPDATE і DELETE — змінюємо або видаляємо</h2>
+    <p>🔹 UPDATE — змінює значення:</p>
+    <pre>
+UPDATE students
+SET age = 16
+WHERE name = 'Аня';
+    </pre>
+
+    <p>🔹 DELETE — видаляє рядок:</p>
+    <pre>
+DELETE FROM students
+WHERE name = 'Іван';
+    </pre>
+
+    <p>⚠️ Завжди пиши WHERE, щоб не видалити все!</p>
+
+    <div class="note">🧠 <strong>Тренуйся:</strong> Зміни вік у когось<br>Видали одного учня</div>
+  </div>
+
+  <div class="day">
+    <h2>🔵 ДЕНЬ 7: Створення своєї таблиці — CREATE TABLE</h2>
+    <p>🔹 Створюємо нову таблицю:</p>
+    <pre>
+CREATE TABLE books (
+  id INTEGER PRIMARY KEY,
+  title TEXT,
+  author TEXT,
+  year INTEGER
+);
+    </pre>
+
+    <p>🔹 Додаємо книжки:</p>
+    <pre>
+INSERT INTO books (title, author, year)
+VALUES ('Місто', 'В. Підмогильний', 1928);
+    </pre>
+
+    <div class="note">🧠 <strong>Тренуйся:</strong> Створи таблицю <code>films</code> з полями id, title, genre, year.</div>
+  </div>
+
+  <div class="day">
+    <h2>🔵 ДЕНЬ 8: Агрегація — підрахунок і статистика</h2>
+    <p>🔹 Підраховуємо:</p>
+    <pre>SELECT COUNT(*) FROM students;</pre>
+
+    <p>🔹 Середнє, мінімум, максимум:</p>
+    <pre>SELECT AVG(age), MAX(age), MIN(age) FROM students;</pre>
+
+    <p>🔹 GROUP BY — групування:</p>
+    <pre>SELECT grade, COUNT(*) FROM students GROUP BY grade;</pre>
+
+    <div class="note">🧠 <strong>Тренуйся:</strong> Порахуй кількість учнів<br>Дізнайся, скільки в кожному класі</div>
+  </div>
+
+  <div class="day">
+    <h2>🔵 ДЕНЬ 9: JOIN — зв’язок таблиць</h2>
+    <p>🔹 Уяви дві таблиці:</p>
+    <pre>
+students
+
+id  name  class_id
+1   Аня   101
+
+classes
+
+id  name
+101 9-А
+    </pre>
+
+    <p>🔹 Об’єднуємо:</p>
+    <pre>
+SELECT students.name, classes.name
+FROM students
+JOIN classes ON students.class_id = classes.id;
+    </pre>
+
+    <div class="note">🧠 <strong>Тренуйся:</strong> Створи дві таблиці (учні й класи) і зв’яжи їх.</div>
+  </div>
+
+  <div class="day">
+    <h2>🔵 ДЕНЬ 10: Міні-проєкт і підсумки</h2>
+    <p>🔹 Створи свою базу:</p>
+    <ul>
+      <li>Таблиця <strong>users</strong>: ім’я, місто, вік</li>
+      <li>Таблиця <strong>orders</strong>: товар, ціна, id користувача</li>
+    </ul>
+
+    <p>🔹 Що спробувати:</p>
+    <ul>
+      <li>Знайти всі замовлення певного користувача</li>
+      <li>Порахувати загальну суму замовлень</li>
+    </ul>
+
+    <p>🎉 Вітаємо! Ти завершила курс з основ SQL!</p>
+  </div>
+<!-- Подключен JavaScript для интерактивности -->
+  <script src="script.js"></script>
+</body>
+</html>
