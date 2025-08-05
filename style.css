@@ -806,3 +806,168 @@ body {
       border-left: 4px solid #00acc1;
       margin-top: 10px;
     }
+
+/* Career Plan Styles */
+.career-plan-section {
+    background: linear-gradient(135deg, rgba(138, 43, 226, 0.1), rgba(75, 0, 130, 0.1));
+    border-radius: 15px;
+    padding: 25px;
+    margin: 25px 0;
+    box-shadow: 0 4px 15px rgba(138, 43, 226, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.career-plan-section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(138, 43, 226, 0.3);
+}
+
+.career-stage {
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.1), rgba(138, 43, 226, 0.1));
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    border-left: 4px solid #8A2BE2;
+    transition: all 0.3s ease;
+}
+
+.career-stage:hover {
+    transform: translateX(5px);
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.15), rgba(138, 43, 226, 0.15));
+}
+
+.career-stage h3 {
+    color: #8A2BE2;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.timeline-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 0;
+    border-left: 3px solid #FF69B4;
+    backdrop-filter: blur(10px);
+}
+
+.skill-category {
+    background: linear-gradient(135deg, rgba(32, 32, 32, 0.8), rgba(64, 64, 64, 0.8));
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px 0;
+    border: 1px solid rgba(138, 43, 226, 0.3);
+}
+
+.skill-category h4 {
+    color: #FF69B4;
+    margin-bottom: 10px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.skill-item {
+    background: rgba(138, 43, 226, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(138, 43, 226, 0.2);
+}
+
+.skill-item:hover {
+    background: rgba(138, 43, 226, 0.2);
+    transform: scale(1.02);
+}
+
+.salary-info {
+    background: linear-gradient(135deg, rgba(0, 255, 127, 0.1), rgba(50, 205, 50, 0.1));
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px 0;
+    border-left: 4px solid #00FF7F;
+}
+
+.salary-amount {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #00FF7F;
+}
+
+.university-list {
+    list-style: none;
+    padding: 0;
+}
+
+.university-list li {
+    background: rgba(255, 255, 255, 0.05);
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 3px solid #8A2BE2;
+    transition: all 0.3s ease;
+}
+
+.university-list li:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.university-name {
+    font-weight: bold;
+    color: #FF69B4;
+}
+
+.university-details {
+    margin-top: 5px;
+    color: #ccc;
+    font-size: 0.9em;
+}
+
+.career-tips {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 140, 0, 0.1));
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    border-left: 4px solid #FFD700;
+}
+
+.career-tips h4 {
+    color: #FFD700;
+    margin-bottom: 15px;
+}
+
+.tip-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border-left: 2px solid #FF8C00;
+}
+
+/* Mobile responsiveness for career plan */
+@media (max-width: 768px) {
+    .career-plan-section {
+        padding: 15px;
+        margin: 15px 0;
+    }
+    
+    .career-stage {
+        padding: 15px;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .timeline-item {
+        padding: 12px;
+    }
+}
