@@ -809,10 +809,17 @@ body {
 
 /* Career Plan Styles */
 .career-plan-main {
-  position: relative;
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   min-height: 100vh;
-  padding: 20px 0;
+  padding: 0 0 20px 0;
 }
 
 .career-container {
@@ -823,7 +830,7 @@ body {
 
 .career-header {
   text-align: center;
-  margin: 40px 0 60px 0;
+  margin: 0 0 15px 0;
 }
 
 .career-header h1 {
@@ -848,7 +855,7 @@ body {
   border: 2px solid rgba(138, 43, 226, 0.3);
   border-radius: 15px;
   padding: 30px;
-  margin: 30px 0;
+  margin: 15px 0;
   box-shadow: 0 4px 15px rgba(138, 43, 226, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   backdrop-filter: blur(10px);
@@ -857,6 +864,11 @@ body {
 .career-section:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(138, 43, 226, 0.3);
+}
+
+/* First career section with no top margin */
+.career-section.current-status {
+  margin-top: 0;
 }
 
 .career-section h2 {
